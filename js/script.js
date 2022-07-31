@@ -36,7 +36,9 @@ let Car = function () {
     }
     this.startMoving = () => {
         let a = confirm(`Начать движение?`);
-        if (a === true && this.engine === true) {
+        if (this.engine === false) {
+            alert(`Движение не начато, двигатель выключен`)
+        } else {
             let drive = prompt(`Введите передачу: N,R,D`);
             switch (true) {
                 case drive == `N`:
